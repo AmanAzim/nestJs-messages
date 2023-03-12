@@ -1,12 +1,16 @@
+import { Injectable } from '@nestjs/common';
+
 import MessagesRepository from './messages.repository';
 
+@Injectable() // this makes this class a injectable dependency
 class MessagesService {
-  messagesRepo: MessagesRepository;
+  // messagesRepo: MessagesRepository;
+  // constructor(messagesRepo: MessagesRepository) {
+  //   this.messagesRepo = messagesRepo;
+  // }
 
-  constructor() {
-    // This is a class creating its own dependency which we DO NOT do either NEst use dependency injection like symfony in real apps
-    this.messagesRepo = new MessagesRepository();
-  }
+  // TypeScript shortcut
+  constructor(public messagesRepo: MessagesRepository) {}
 
   async findOne(id: string) {
     return this.messagesRepo.findOne(id);
