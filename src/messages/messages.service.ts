@@ -12,7 +12,7 @@ class MessagesService {
   // TypeScript shortcut
   constructor(public messagesRepo: MessagesRepository) {}
 
-  async findOne(id: string) {
+  public async findOne(id: string) {
     return this.messagesRepo.findOne(id);
   }
 

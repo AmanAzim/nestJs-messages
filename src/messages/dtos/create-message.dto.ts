@@ -6,3 +6,5 @@ class CreateMessageDto {
 }
 
 export default CreateMessageDto;
+
+// Validation pipe takes the incoming request body > transform it into an instance of the of CreateMessageDto Class using class-transformer package internally > validate using class-validator

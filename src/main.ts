@@ -6,7 +6,7 @@ import { MessagesModule } from './messages/messages.module';
 async function bootstrap() {
   const app = await NestFactory.create(MessagesModule);
 
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   await app.listen(3000);
 }
